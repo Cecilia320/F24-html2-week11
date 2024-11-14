@@ -199,7 +199,7 @@ footer .left{
 ***********************************************************/
 
 @media screen and (min-width:786px){
-	#container{
+	.container{
 		padding:0 3%;	
 	}
 	
@@ -272,7 +272,7 @@ footer .left{
 
 
 @media screen and (min-width:960px){
-	#container{
+	.container{
 		max-width:1020px;
 		margin:0 auto;	
 	}
@@ -314,5 +314,40 @@ footer .left{
 
 	footer section{
 		width:100%;
+	}
+}
+
+
+/******************************************
+		Print Media Styles
+******************************************/
+@media print{
+	html{
+		/* for print - we set the background to white and the text to black
+		so it's easier to print and easier to read */
+		background:white;
+		color:black !important; /* we can use important to make this override everything
+		else - but, don't use important most of the time! */
+	}
+
+	nav{
+		display:none;
+		/* navigation isn't very useful on a piece of paper, so hide it */
+	}
+
+	section{
+		border-top:1px solid black;
+	}
+}
+
+/******************************************
+		Mobile Orientation Styles
+******************************************/
+@media screen and (orientation: landscape) and (hover:none){
+	/* two conditions ensure this only applies to mobile devices
+		the orientation for how the screen is shaped / which way the device is
+		the hover condition because only mobile devices don't have a hover */
+	html{
+		background-color:rgb(128,128,128);
 	}
 }
